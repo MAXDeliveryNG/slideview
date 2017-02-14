@@ -132,7 +132,6 @@ public class SlideView extends RelativeLayout implements SeekBar.OnSeekBarChange
 
     public void setButtonImageDisabled(Drawable image) {
         buttonImageDisabled = image;
-        buttonLayers.setDrawableByLayerId(R.id.buttonImage, image);
     }
 
 
@@ -152,13 +151,13 @@ public class SlideView extends RelativeLayout implements SeekBar.OnSeekBarChange
     }
 
     public void setOnSlideCompleteListener(OnSlideCompleteListener listener) {
-        slider.setOnSlideCompleteListenerInternal(listener);
+        slider.setOnSlideCompleteListenerInternal(listener, this);
 
     }
 
 
     public interface OnSlideCompleteListener {
-        void onSlideComplete();
+        void onSlideComplete(SlideView slideView);
     }
 
     @Override

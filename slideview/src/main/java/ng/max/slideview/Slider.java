@@ -11,6 +11,7 @@ public class Slider extends SeekBar {
 
     private Drawable thumb;
     private SlideView.OnSlideCompleteListener listener;
+    private SlideView slideView;
 
     public Slider(Context context, AttributeSet attrs) {
         super(context, attrs);
@@ -32,7 +33,7 @@ public class Slider extends SeekBar {
             }
         } else if (event.getAction() == MotionEvent.ACTION_UP) {
             if (getProgress() > 85) {
-                if (listener != null) listener.onSlideComplete();
+                if (listener != null) listener.onSlideComplete(slideView);
             }
             setProgress(0);
         } else
@@ -41,8 +42,9 @@ public class Slider extends SeekBar {
         return true;
     }
 
-    void setOnSlideCompleteListenerInternal(SlideView.OnSlideCompleteListener listener) {
+    void setOnSlideCompleteListenerInternal(SlideView.OnSlideCompleteListener listener, SlideView slideView) {
         this.listener = listener;
+        this.slideView = slideView;
     }
 
     @Override

@@ -1,18 +1,82 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="ng.max.slideview.sample.MainActivity">
 
+    <ng.max.slideview.SlideView
+        android:id="@+id/slider1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:buttonBackgroundColor="#fff"
+        app:buttonImage="@drawable/ic_chevron_double_right_purple"
+        app:buttonImageDisabled="@drawable/ic_chevron_double_right_pink"
+        app:slideBackgroundColor="@color/colorAccent"
+        app:slideText="Accept"/>
+
+    <ng.max.slideview.SlideView
+        android:id="@+id/slider2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="10dp"
+        app:buttonBackgroundColor="@android:color/white"
+        app:buttonImage="@drawable/ic_gear_purple"
+        app:reverseSlide="true"
+        app:slideBackgroundColor="@color/colorPrimary"
+        app:slideText="Cancel"/>
+
+    <ng.max.slideview.SlideView
+        android:id="@+id/slider3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:buttonBackgroundColor="@color/colorAccent"
+        app:buttonImage="@drawable/ic_chevron_double_right_white_24dp"
+        app:slideBackgroundColor="@android:color/white"
+        app:slideText="Reverse"
+        app:slideTextColor="@color/colorAccent"
+        app:strokeColor="@color/colorAccent"/>
+
+    <ng.max.slideview.SlideView
+        android:id="@+id/slider4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:reverseSlide="true"
+        app:buttonBackgroundColor="@color/colorPrimary"
+        app:buttonImage="@drawable/ic_chevron_double_right_white_24dp"
+        app:slideBackgroundColor="@android:color/white"
+        app:slideText="Reverse"
+        app:slideTextColor="@color/colorPrimary"
+        app:strokeColor="@color/colorPrimary"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="10dp"/>
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"/>
-</RelativeLayout>
+        android:text="Slide To Disable"
+        android:layout_marginTop="20dp"
+        android:layout_gravity="center_horizontal"
+        android:textColor="@color/colorPrimary"/>
+
+    <ng.max.slideview.SlideView
+        android:id="@+id/slider5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="10dp"
+        app:buttonBackgroundColor="@android:color/white"
+        app:buttonImage="@drawable/ic_gear_purple"
+        app:slideBackgroundColor="@color/slide_button_bg_selector"
+        app:slideText="Enabled"
+        app:buttonImageDisabled="@drawable/ic_settings_grey600_24dp"/>
+</LinearLayout>
