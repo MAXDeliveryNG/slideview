@@ -18,8 +18,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:buttonBackgroundColor="#fff"
-        app:buttonImage="@drawable/ic_chevron_double_right_purple"
-        app:buttonImageDisabled="@drawable/ic_chevron_double_right_pink"
+        app:buttonImage="@drawable/ic_chevron_double_right_pink"
         app:slideBackgroundColor="@color/colorAccent"
         app:slideText="Accept"/>
 
@@ -30,7 +29,7 @@
         android:layout_marginBottom="10dp"
         android:layout_marginTop="10dp"
         app:buttonBackgroundColor="@android:color/white"
-        app:buttonImage="@drawable/ic_gear_purple"
+        app:buttonImage="@drawable/ic_chevron_double_right_purple"
         app:reverseSlide="true"
         app:slideBackgroundColor="@color/colorPrimary"
         app:slideText="Cancel"/>
@@ -42,7 +41,7 @@
         app:buttonBackgroundColor="@color/colorAccent"
         app:buttonImage="@drawable/ic_chevron_double_right_white_24dp"
         app:slideBackgroundColor="@android:color/white"
-        app:slideText="Reverse"
+        app:slideText="Accept"
         app:slideTextColor="@color/colorAccent"
         app:strokeColor="@color/colorAccent"/>
 
@@ -75,7 +74,7 @@
         android:layout_marginBottom="10dp"
         android:layout_marginTop="10dp"
         app:buttonBackgroundColor="@android:color/white"
-        app:buttonImage="@drawable/ic_gear_purple"
+        app:buttonImage="@drawable/ic_settings_purple"
         app:slideBackgroundColor="@color/slide_button_bg_selector"
         app:slideText="Enabled"
         app:buttonImageDisabled="@drawable/ic_settings_grey600_24dp"/>
