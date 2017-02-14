@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <attr name="slideBackgroundColor" format="color"/>
+    <attr name="buttonBackgroundColor" format="color"/>
+    <attr name="buttonImage" format="reference"/>
+    <attr name="buttonImageDisabled" format="reference"/>
+    <attr name="strokeColor" format="color"/>
+    <attr name="slideText" format="string"/>
+    <attr name="slideTextColor" format="color"/>
+    <attr name="reverseSlide" format="boolean"/>
+    <attr name="animateSlideText" format="boolean"/>
+
+    <declare-styleable name="SlideView">
+        <attr name="slideBackgroundColor"/>
+        <attr name="buttonBackgroundColor"/>
+        <attr name="buttonImage"/>
+        <attr name="buttonImageDisabled"/>
+        <attr name="strokeColor"/>
+        <attr name="slideText"/>
+        <attr name="slideTextColor"/>
+        <attr name="reverseSlide"/>
+        <attr name="animateSlideText"/>
+    </declare-styleable>
+
+</resources>
