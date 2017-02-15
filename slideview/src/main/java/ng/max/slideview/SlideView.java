@@ -53,7 +53,7 @@ public class SlideView extends RelativeLayout implements SeekBar.OnSeekBarChange
     }
 
     void init(AttributeSet attrs, int defStyle) {
-        inflate(getContext(), R.layout.slide_view, this);
+        inflate(getContext(), R.layout.sv_slide_view, this);
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
             setBackground(ContextCompat.getDrawable(getContext(), R.drawable.slide_view_bg));
         } else {

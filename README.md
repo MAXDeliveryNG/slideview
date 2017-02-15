@@ -84,8 +84,32 @@ Here's an example with all the view attributes.
 |slideTextColor|The color of the slide label |`#FFFFFF`|
 |buttonImage|The drawable on the button | double chevron icon |
 |slideText|The slide label| `none` |
-|animateSlideText|If `true`, the label fades out, while the slide is in progress| `true` |
+|animateSlideText|If `true`, the label fades out while the slide is in progress| `true` |
 |strokeColor|If set, a stroke is drawn around the slide background | `none` |
-|reverseSlide|If `true`, the SlideView is reversed. | `false` |
+|reverseSlide|If `true`, the SlideView is reversed | `false` |
 |buttonImageDisabled| The drawable to be used as the button image when the SlideView is disabled| the default drawable|
 
+###### Note: All color attributes can be raplaced with a `ColorStateList` so the SlideView can use the appropriate colors for the enabled and disabled states. See the sample module for examples. 
+
+### Listening for slide actions on the SlideView
+
+You can attach a listener to be notified when the user slides across the SlideView. An example is shown below.
+
+```java
+((SlideView) findViewById(R.id.slide)).setOnSlideCompleteListener(new SlideView.OnSlideCompleteListener() {
+            @Override
+            public void onSlideComplete(SlideView slideView) {
+                // vibrate the device
+                Vibrator vibrator = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
+                vibrator.vibrate(100);
+                
+                // go to a new activity
+                startActivity(new Intent(MainActivity.this, NewActivity.class));
+
+            }
+        });
+
+```
+
+
+### Setting the view attributes via code
