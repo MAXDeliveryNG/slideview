@@ -86,7 +86,7 @@ public class SlideView extends RelativeLayout implements SeekBar.OnSeekBarChange
             setText(slideText);
             setTextColor(sliderTextColor == null ? slideTextView.getTextColors() : sliderTextColor);
 
-            int buttonImageId = a.getResourceId(R.styleable.SlideView_buttonImage, R.drawable.ic_chevron_double_right_yellow);
+            int buttonImageId = a.getResourceId(R.styleable.SlideView_buttonImage, R.drawable.ic_chevron_double_right);
             setButtonImage(ContextCompat.getDrawable(getContext(), buttonImageId));
             setButtonImageDisabled(ContextCompat.getDrawable(getContext(), a.getResourceId
                     (R.styleable.SlideView_buttonImageDisabled, buttonImageId)));

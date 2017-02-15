@@ -79,4 +79,6 @@
         app:slideBackgroundColor="@color/slide_button_bg_selector"
         app:slideText="Enabled"
         app:buttonImageDisabled="@drawable/ic_settings_grey600_24dp"/>
+
+
 </LinearLayout>

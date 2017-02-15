@@ -30,7 +30,6 @@ public class Util {
         if (drawable instanceof GradientDrawable) {
             GradientDrawable gradientDrawable = (GradientDrawable) drawable;
             gradientDrawable.mutate();
-            // todo: add stroke value to the view attr
             gradientDrawable.setStroke(4, color);
         }
     }
