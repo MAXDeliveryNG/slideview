@@ -1,14 +1,14 @@
 # SlideView
 
-A simple slide library for Android.
+A simple, yet awesome slide library for Android.
 
 [![License](https://img.shields.io/badge/License-MIT-blue.svg)](http://www.apache.org/licenses/LICENSE-2.0)
 
 ## Preview
 
-<img src="https://image.ibb.co/jNqQfa/slideview1.png" alt="SlideView" width="240"> <img src="https://image.ibb.co/m1Od0a/slideview2.png" alt="SlideView2" width="240">
+<img src="https://image.ibb.co/niAQwF/Slide_View1.png" alt="SlideView" width="240"> <img src="https://image.ibb.co/moc5wF/Slide_View2.png" alt="SlideView2" width="240">
 
-Get the sample apk [here](https://github.com/)
+Get the sample apk [here](https://github.com/MAXDeliveryNG/slideview/releases/download/1.0.0/sample.apk/)
 
 
 ## Setup
@@ -50,8 +50,7 @@ Here's a basic implementation.
         app:buttonImage="@drawable/button_img"
         app:slideBackgroundColor="@color/slide_bg_color"
         app:slideText="@string/slide_text"
-        app:slideTextColor="@color/slide_text_color"
-        />
+        app:slideTextColor="@color/slide_text_color" />
 ```
 
 
@@ -70,8 +69,7 @@ Here's an example with all the view attributes.
         app:animateSlideText="true"
         app:reverseSlide="false"
         app:strokeColor="@color/slide_stroke_color"
-        app:buttonImageDisabled="@drawable/button_img_disabled"
-        />
+        app:buttonImageDisabled="@drawable/button_img_disabled" />
 
 ```
 
@@ -89,7 +87,7 @@ Here's an example with all the view attributes.
 |reverseSlide|If `true`, the SlideView is reversed | `false` |
 |buttonImageDisabled| The drawable to be used as the button image when the SlideView is disabled| the default drawable|
 
-###### Note: All color attributes can be raplaced with a `ColorStateList` so the SlideView can use the appropriate colors for the enabled and disabled states. See the sample module for examples. 
+Note: All color attributes can be replaced with a `ColorStateList` so the SlideView can use the appropriate colors for the enabled and disabled states. See the sample module for examples. 
 
 ### Listening for slide actions on the SlideView
 
@@ -113,3 +111,64 @@ You can attach a listener to be notified when the user slides across the SlideVi
 
 
 ### Setting the view attributes via code
+
+For convenience, many of the SlideView attributes can be set via code.
+
+```java 
+ // set the label
+ setText(CharSequence text); 
+ 
+ // set the drawable for the button
+ setButtonImage(Drawable image);
+ 
+ // set the label color
+ setTextColor(@ColorInt int color) ;
+ 
+ // set the label color with a ColorStateList
+ setTextColor(ColorStateList colors);
+ 
+ // set the button drawable for disabled state
+ setButtonImageDisabled(Drawable image);
+ 
+ // set the button background color
+ setButtonBackgroundColor(ColorStateList color);
+ 
+ // set the slide background color
+ setSlideBackgroundColor(ColorStateList color);
+ 
+```
+
+Note: for the methods that take a `ColorStateList`, you can easily use a single color by converting it to a `ColorStateList` with the method `ColorStateList.valueOf(int color);`
+
+## Caveat 
+The view height is currently fixed so you should use `wrap_content` when defining the view height in your layout. 
+
+## Author
+Kizito Nwose (kizito.nwose@max.ng, [@kizitonwose](https://github.com/kizitonwose))
+
+
+## Contributing
+If you find any bugs, please feel free to fix it and send a pull request or [create an issue.](https://github.com/MAXDeliveryNG/slideview/issues) 
+
+## License
+```
+Copyright (c) 2017 MAXDeliveryNG
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+```

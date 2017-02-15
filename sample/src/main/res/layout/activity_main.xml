@@ -15,6 +15,7 @@
 
     <ng.max.slideview.SlideView
         android:id="@+id/slider1"
+        android:layout_marginTop="5dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:buttonBackgroundColor="#fff"
@@ -26,8 +27,8 @@
         android:id="@+id/slider2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="10dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginBottom="15dp"
+        android:layout_marginTop="15dp"
         app:buttonBackgroundColor="@android:color/white"
         app:buttonImage="@drawable/ic_chevron_double_right_purple"
         app:reverseSlide="true"
@@ -56,14 +57,14 @@
         app:slideText="Reverse"
         app:slideTextColor="@color/colorPrimary"
         app:strokeColor="@color/colorPrimary"
-        android:layout_marginBottom="10dp"
-        android:layout_marginTop="10dp"/>
+        android:layout_marginBottom="15dp"
+        android:layout_marginTop="15dp"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Slide to disable"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="25dp"
         android:textSize="20sp"
         android:layout_gravity="center_horizontal"
         android:textColor="@color/colorPrimary"/>
@@ -72,8 +73,8 @@
         android:id="@+id/slider5"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="10dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginBottom="15dp"
+        android:layout_marginTop="15dp"
         app:buttonBackgroundColor="@android:color/white"
         app:buttonImage="@drawable/ic_settings_purple"
         app:slideBackgroundColor="@color/slide_button_bg_selector"

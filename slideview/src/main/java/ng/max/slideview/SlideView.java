@@ -121,7 +121,7 @@ public class SlideView extends RelativeLayout implements SeekBar.OnSeekBarChange
         slideTextView.setTextColor(colors);
     }
 
-    public void setText(String text) {
+    public void setText(CharSequence text) {
         slideTextView.setText(text);
     }
 
@@ -152,7 +152,6 @@ public class SlideView extends RelativeLayout implements SeekBar.OnSeekBarChange
 
     public void setOnSlideCompleteListener(OnSlideCompleteListener listener) {
         slider.setOnSlideCompleteListenerInternal(listener, this);
-
     }
 
 
