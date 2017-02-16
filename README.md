@@ -7,7 +7,7 @@ A simple, yet awesome sliding button for Android.
 
 ## Preview
 
-<img src="https://image.ibb.co/niAQwF/Slide_View1.png" alt="SlideView" width="240"> <img src="https://image.ibb.co/moc5wF/Slide_View2.png" alt="SlideView2" width="240">
+<img src="/art/screenshot_1.png" alt="SlideView" width="240"> <img src="/art/screenshot_2.png" alt="SlideView2" width="240">
 
 Get the sample apk [here](https://github.com/MAXDeliveryNG/slideview/releases/download/1.0.0/sample.apk/)
 
