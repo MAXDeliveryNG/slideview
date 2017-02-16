@@ -2,7 +2,7 @@
 
 A simple, yet awesome slide library for Android.
 
-[![License](https://img.shields.io/badge/License-MIT-blue.svg)](http://www.apache.org/licenses/LICENSE-2.0)
+[![License](https://img.shields.io/badge/License-MIT-blue.svg)](https://github.com/MAXDeliveryNG/slideview/blob/master/LICENSE.txt)
 
 ## Preview
 
@@ -91,7 +91,7 @@ Note: All color attributes can be replaced with a `ColorStateList` so the SlideV
 
 ### Listening for slide actions on the SlideView
 
-You can attach a listener to be notified when the user slides across the SlideView. An example is shown below.
+You can set a listener to be notified when the user slides across the SlideView. An example is shown below.
 
 ```java
 ((SlideView) findViewById(R.id.slide)).setOnSlideCompleteListener(new SlideView.OnSlideCompleteListener() {
@@ -148,7 +148,7 @@ Kizito Nwose (kizito.nwose@max.ng, [@kizitonwose](https://github.com/kizitonwose
 
 
 ## Contributing
-If you find any bugs, please feel free to fix it and send a pull request or [create an issue.](https://github.com/MAXDeliveryNG/slideview/issues) 
+If you find any bugs, please feel free to fix it and send a pull request or [open an issue.](https://github.com/MAXDeliveryNG/slideview/issues) 
 
 ## License
 ```
