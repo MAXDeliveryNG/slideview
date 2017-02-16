@@ -1,7 +1,8 @@
 # SlideView
 
-A simple, yet awesome slide library for Android.
+A simple, yet awesome sliding button for Android.
 
+[![JitPack](https://jitpack.io/v/MAXDeliveryNG/slideview.svg)](https://jitpack.io/#MAXDeliveryNG/slideview)
 [![License](https://img.shields.io/badge/License-MIT-blue.svg)](https://github.com/MAXDeliveryNG/slideview/blob/master/LICENSE.txt)
 
 ## Preview

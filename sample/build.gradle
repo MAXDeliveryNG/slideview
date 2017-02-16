@@ -28,5 +28,7 @@ dependencies {
     compile 'com.android.support:appcompat-v7:25.1.0'
     testCompile 'junit:junit:4.12'
 
+    // we have to reference the library module directly
+    // compile 'com.github.MAXDeliveryNG:slideview:1.0.0'
     compile project(':slideview')
 }
