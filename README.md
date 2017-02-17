@@ -32,7 +32,7 @@ Add this to your app `build.gradle`:
 
 ```groovy
 dependencies {
-	compile 'com.github.MAXDeliveryNG.slideview:1.0.0'
+	compile 'com.github.MAXDeliveryNG:slideview:1.0.0'
 }
 ```
 
