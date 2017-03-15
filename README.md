@@ -5,6 +5,7 @@ A simple, yet awesome sliding button for Android.
 [![JitPack](https://jitpack.io/v/MAXDeliveryNG/slideview.svg)](https://jitpack.io/#MAXDeliveryNG/slideview)
 [![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-SlideView-9C27B0.svg)](https://android-arsenal.com/details/1/5304)
 [![License](https://img.shields.io/badge/License-MIT-blue.svg)](https://github.com/MAXDeliveryNG/slideview/blob/master/LICENSE.txt)
+[![Min SDK](https://img.shields.io/badge/Min%20SDK-14-e91e63.svg)](https://developer.android.com/about/versions/android-4.0.html)
 
 ## Preview
 
