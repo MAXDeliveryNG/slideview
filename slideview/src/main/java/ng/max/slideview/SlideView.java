@@ -10,6 +10,7 @@ import android.support.annotation.ColorInt;
 import android.support.annotation.RequiresApi;
 import android.support.v4.content.ContextCompat;
 import android.util.AttributeSet;
+import android.util.TypedValue;
 import android.widget.RelativeLayout;
 import android.widget.SeekBar;
 import android.widget.TextView;
@@ -70,7 +71,9 @@ public class SlideView extends RelativeLayout implements SeekBar.OnSeekBarChange
                 defStyle, defStyle);
 
         int strokeColor;
+        int slideTextSize;
         String slideText;
+        boolean centerText;
         boolean reverseSlide;
         ColorStateList sliderTextColor;
         try {
@@ -82,6 +85,9 @@ public class SlideView extends RelativeLayout implements SeekBar.OnSeekBarChange
 
             slideText = a.getString(R.styleable.SlideView_slideText);
             sliderTextColor = a.getColorStateList(R.styleable.SlideView_slideTextColor);
+
+            slideTextSize = a.getInt(R.styleable.SlideView_slideTextSize, 18);
+            slideTextView.setTextSize(TypedValue.COMPLEX_UNIT_SP, slideTextSize);
 
             setText(slideText);
             setTextColor(sliderTextColor == null ? slideTextView.getTextColors() : sliderTextColor);
@@ -108,6 +114,19 @@ public class SlideView extends RelativeLayout implements SeekBar.OnSeekBarChange
                 }
                 slideTextView.setLayoutParams(params);
             }
+
+            centerText = a.getBoolean(R.styleable.SlideView_centerText, false);
+
+            if (centerText) {
+                LayoutParams params = ((LayoutParams) slideTextView.getLayoutParams());
+                params.addRule(RelativeLayout.CENTER_HORIZONTAL);
+                params.addRule(RelativeLayout.ALIGN_PARENT_RIGHT, 0);
+                params.addRule(RelativeLayout.ALIGN_PARENT_END, 0);
+                params.addRule(RelativeLayout.ALIGN_PARENT_START, 0);
+                params.addRule(RelativeLayout.ALIGN_PARENT_LEFT, 0);
+                slideTextView.setLayoutParams(params);
+            }
+
         } finally {
             a.recycle();
         }
