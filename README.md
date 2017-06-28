@@ -91,8 +91,8 @@ Here's an example with all the view attributes.
 |strokeColor|If set, a stroke is drawn around the slide background | `none` |
 |reverseSlide|If `true`, the SlideView is reversed | `false` |
 |buttonImageDisabled| The drawable to be used as the button image when the SlideView is disabled| the default drawable|
-|slideTextSize| Set a custom size for the slideview\'s text. Default is 18sp.|
-|centerText| Center the text of the slideview. Default is false.|
+|slideTextSize| Set a custom size for the slideview\'s text.|18sp|
+|centerText| Center the text of the slideview.|false|
 
 Note: All color attributes can be replaced with a `ColorStateList` so the SlideView can use the appropriate colors for the enabled and disabled states. See the sample module for examples. 
 
