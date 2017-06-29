@@ -101,7 +101,6 @@
         app:slideBackgroundColor="@color/slide_button_bg_selector"
         app:slideText="Enabled"
         app:slideTextSize="10"
-        app:centerText="true"
         app:buttonImageDisabled="@drawable/ic_settings_grey600_24dp"/>
 
 </LinearLayout>

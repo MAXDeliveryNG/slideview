@@ -9,7 +9,6 @@
     <attr name="slideTextColor" format="color"/>
     <attr name="reverseSlide" format="boolean"/>
     <attr name="animateSlideText" format="boolean"/>
-    <attr name="centerText" format="boolean" />
     <attr name="slideTextSize" format="integer" />
 
     <declare-styleable name="SlideView">
@@ -22,7 +21,6 @@
         <attr name="slideTextColor"/>
         <attr name="reverseSlide"/>
         <attr name="animateSlideText"/>
-        <attr name="centerText" />
         <attr name="slideTextSize" />
     </declare-styleable>
 

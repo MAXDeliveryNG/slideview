@@ -73,7 +73,6 @@ public class SlideView extends RelativeLayout implements SeekBar.OnSeekBarChange
         int strokeColor;
         int slideTextSize;
         String slideText;
-        boolean centerText;
         boolean reverseSlide;
         ColorStateList sliderTextColor;
         try {
@@ -114,19 +113,6 @@ public class SlideView extends RelativeLayout implements SeekBar.OnSeekBarChange
                 }
                 slideTextView.setLayoutParams(params);
             }
-
-            centerText = a.getBoolean(R.styleable.SlideView_centerText, false);
-
-            if (centerText) {
-                LayoutParams params = ((LayoutParams) slideTextView.getLayoutParams());
-                params.addRule(RelativeLayout.CENTER_HORIZONTAL);
-                params.addRule(RelativeLayout.ALIGN_PARENT_RIGHT, 0);
-                params.addRule(RelativeLayout.ALIGN_PARENT_END, 0);
-                params.addRule(RelativeLayout.ALIGN_PARENT_START, 0);
-                params.addRule(RelativeLayout.ALIGN_PARENT_LEFT, 0);
-                slideTextView.setLayoutParams(params);
-            }
-
         } finally {
             a.recycle();
         }
@@ -143,6 +129,10 @@ public class SlideView extends RelativeLayout implements SeekBar.OnSeekBarChange
     public void setText(CharSequence text) {
         slideTextView.setText(text);
     }
+
+    public void setTextSize(int size) { slideTextView.setTextSize(size); }
+
+    public TextView getTextView() { return slideTextView; }
 
     public void setButtonImage(Drawable image) {
         buttonImage = image;
