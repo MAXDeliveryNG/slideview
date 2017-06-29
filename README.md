@@ -69,6 +69,8 @@ Here's an example with all the view attributes.
         app:slideBackgroundColor="@color/slide_bg_color"
         app:slideText="@string/slide_text"
         app:slideTextColor="@color/slide_text_color"
+	app:slideTextSize="15"
+	app:centerText="true"
         app:animateSlideText="true"
         app:reverseSlide="false"
         app:strokeColor="@color/slide_stroke_color"
@@ -89,6 +91,8 @@ Here's an example with all the view attributes.
 |strokeColor|If set, a stroke is drawn around the slide background | `none` |
 |reverseSlide|If `true`, the SlideView is reversed | `false` |
 |buttonImageDisabled| The drawable to be used as the button image when the SlideView is disabled| the default drawable|
+|slideTextSize| Set a custom size for the slideview\'s text.|18sp|
+|centerText| Center the text of the slideview.|false|
 
 Note: All color attributes can be replaced with a `ColorStateList` so the SlideView can use the appropriate colors for the enabled and disabled states. See the sample module for examples. 
 
