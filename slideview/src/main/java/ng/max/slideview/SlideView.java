@@ -10,6 +10,7 @@ import android.support.annotation.ColorInt;
 import android.support.annotation.RequiresApi;
 import android.support.v4.content.ContextCompat;
 import android.util.AttributeSet;
+import android.util.TypedValue;
 import android.widget.RelativeLayout;
 import android.widget.SeekBar;
 import android.widget.TextView;
@@ -70,6 +71,7 @@ public class SlideView extends RelativeLayout implements SeekBar.OnSeekBarChange
                 defStyle, defStyle);
 
         int strokeColor;
+        int slideTextSize;
         String slideText;
         boolean reverseSlide;
         ColorStateList sliderTextColor;
@@ -82,6 +84,9 @@ public class SlideView extends RelativeLayout implements SeekBar.OnSeekBarChange
 
             slideText = a.getString(R.styleable.SlideView_slideText);
             sliderTextColor = a.getColorStateList(R.styleable.SlideView_slideTextColor);
+
+            slideTextSize = a.getInt(R.styleable.SlideView_slideTextSize, 18);
+            slideTextView.setTextSize(TypedValue.COMPLEX_UNIT_SP, slideTextSize);
 
             setText(slideText);
             setTextColor(sliderTextColor == null ? slideTextView.getTextColors() : sliderTextColor);
@@ -124,6 +129,10 @@ public class SlideView extends RelativeLayout implements SeekBar.OnSeekBarChange
     public void setText(CharSequence text) {
         slideTextView.setText(text);
     }
+
+    public void setTextSize(int size) { slideTextView.setTextSize(size); }
+
+    public TextView getTextView() { return slideTextView; }
 
     public void setButtonImage(Drawable image) {
         buttonImage = image;

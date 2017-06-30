@@ -81,5 +81,26 @@
         app:slideText="Enabled"
         app:buttonImageDisabled="@drawable/ic_settings_grey600_24dp"/>
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Center Text &amp; Change Text Size"
+        android:layout_marginTop="25dp"
+        android:textSize="20sp"
+        android:layout_gravity="center_horizontal"
+        android:textColor="@color/colorPrimary"/>
+
+    <ng.max.slideview.SlideView
+        android:id="@+id/slider6"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="15dp"
+        android:layout_marginTop="15dp"
+        app:buttonBackgroundColor="@android:color/white"
+        app:buttonImage="@drawable/ic_settings_purple"
+        app:slideBackgroundColor="@color/slide_button_bg_selector"
+        app:slideText="Enabled"
+        app:slideTextSize="10"
+        app:buttonImageDisabled="@drawable/ic_settings_grey600_24dp"/>
 
 </LinearLayout>
