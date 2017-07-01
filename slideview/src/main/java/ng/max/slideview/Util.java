@@ -1,9 +1,11 @@
 package ng.max.slideview;
 
+import android.content.Context;
 import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.GradientDrawable;
 import android.graphics.drawable.ShapeDrawable;
+import android.util.TypedValue;
 
 /**
  * @author Kizito Nwose
@@ -32,6 +34,11 @@ public class Util {
             gradientDrawable.mutate();
             gradientDrawable.setStroke(4, color);
         }
+    }
+
+    public static float spToPx(int sp, Context context) {
+        return TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_SP, sp,
+                context.getResources().getDisplayMetrics());
     }
 
 }

@@ -15,6 +15,8 @@ import android.widget.RelativeLayout;
 import android.widget.SeekBar;
 import android.widget.TextView;
 
+import static ng.max.slideview.Util.spToPx;
+
 /**
  * @author Kizito Nwose
  */
@@ -71,7 +73,7 @@ public class SlideView extends RelativeLayout implements SeekBar.OnSeekBarChange
                 defStyle, defStyle);
 
         int strokeColor;
-        int slideTextSize;
+        float slideTextSize = spToPx(16, getContext());
         String slideText;
         boolean reverseSlide;
         ColorStateList sliderTextColor;
@@ -85,8 +87,8 @@ public class SlideView extends RelativeLayout implements SeekBar.OnSeekBarChange
             slideText = a.getString(R.styleable.SlideView_slideText);
             sliderTextColor = a.getColorStateList(R.styleable.SlideView_slideTextColor);
 
-            slideTextSize = a.getInt(R.styleable.SlideView_slideTextSize, 18);
-            slideTextView.setTextSize(TypedValue.COMPLEX_UNIT_SP, slideTextSize);
+            slideTextSize = a.getDimension(R.styleable.SlideView_slideTextSize, slideTextSize);
+            slideTextView.setTextSize(TypedValue.COMPLEX_UNIT_PX, slideTextSize);
 
             setText(slideText);
             setTextColor(sliderTextColor == null ? slideTextView.getTextColors() : sliderTextColor);
