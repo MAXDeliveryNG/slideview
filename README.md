@@ -69,7 +69,7 @@ Here's an example with all the view attributes.
         app:slideBackgroundColor="@color/slide_bg_color"
         app:slideText="@string/slide_text"
         app:slideTextColor="@color/slide_text_color"
-	app:slideTextSize="18"
+        app:slideTextSize="18"
         app:animateSlideText="true"
         app:reverseSlide="false"
         app:strokeColor="@color/slide_stroke_color"
@@ -86,11 +86,11 @@ Here's an example with all the view attributes.
 |slideTextColor|The color of the slide label |`#FFFFFF`|
 |buttonImage|The drawable on the button | double chevron icon |
 |slideText|The slide label| `none` |
+|slideTextSize|The label's size| 16sp |
 |animateSlideText|If `true`, the label fades out while the slide is in progress| `true` |
 |strokeColor|If set, a stroke is drawn around the slide background | `none` |
 |reverseSlide|If `true`, the SlideView is reversed | `false` |
 |buttonImageDisabled| The drawable to be used as the button image when the SlideView is disabled| the default drawable|
-|slideTextSize| Set a custom size for the slideview\'s text.|18sp|
 
 Note: All color attributes can be replaced with a `ColorStateList` so the SlideView can use the appropriate colors for the enabled and disabled states. See the sample module for examples. 
 
@@ -122,6 +122,9 @@ For convenience, many of the SlideView attributes can be set via code.
 ```java 
  // set the label
  setText(CharSequence text); 
+ 
+ // set the text size
+ setTextSize(int size);
  
  // set the drawable for the button
  setButtonImage(Drawable image);
