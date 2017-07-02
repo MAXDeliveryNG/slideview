@@ -69,7 +69,7 @@ Here's an example with all the view attributes.
         app:slideBackgroundColor="@color/slide_bg_color"
         app:slideText="@string/slide_text"
         app:slideTextColor="@color/slide_text_color"
-        app:slideTextSize="18"
+        app:slideTextSize="16sp"
         app:animateSlideText="true"
         app:reverseSlide="false"
         app:strokeColor="@color/slide_stroke_color"
@@ -99,16 +99,16 @@ Note: All color attributes can be replaced with a `ColorStateList` so the SlideV
 You can set a listener to be notified when the user slides across the SlideView. An example is shown below.
 
 ```java
-((SlideView) findViewById(R.id.slide)).setOnSlideCompleteListener(new SlideView.OnSlideCompleteListener() {
+SlideView slideView = (SlideView) findViewById(R.id.slider);
+slideView.setOnSlideCompleteListener(new SlideView.OnSlideCompleteListener() {
             @Override
             public void onSlideComplete(SlideView slideView) {
                 // vibrate the device
                 Vibrator vibrator = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
                 vibrator.vibrate(100);
-                
+
                 // go to a new activity
                 startActivity(new Intent(MainActivity.this, NewActivity.class));
-
             }
         });
 
