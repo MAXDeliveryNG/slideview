@@ -27,6 +27,9 @@ public class Slider extends SeekBar {
     public boolean onTouchEvent(MotionEvent event) {
         if (event.getAction() == MotionEvent.ACTION_DOWN) {
             if (thumb.getBounds().contains((int) event.getX(), (int) event.getY())) {
+                // This fixes an issue where the parent view (e.g ScrollView) receives
+                // touch events along with the SlideView
+                getParent().requestDisallowInterceptTouchEvent(true);
                 super.onTouchEvent(event);
             } else {
                 return false;
@@ -35,6 +38,7 @@ public class Slider extends SeekBar {
             if (getProgress() > 85) {
                 if (listener != null) listener.onSlideComplete(slideView);
             }
+            getParent().requestDisallowInterceptTouchEvent(false);
             setProgress(0);
         } else
             super.onTouchEvent(event);
