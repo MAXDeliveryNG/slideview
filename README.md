@@ -33,29 +33,32 @@ Add this to your app `build.gradle`:
 
 ```groovy
 dependencies {
-	compile 'com.github.MAXDeliveryNG:slideview:1.0.2'
+	compile 'com.github.MAXDeliveryNG:slideview:1.1.0'
 }
 ```
 
 ## Usage
 
-
 The SlideView is very easy to use. Just add it to your layout like any other view. 
 
+> From version 1.1.0, all SlideView's attributes are prefixed "sv_", this 
+is to avoid conflicting with attributes in other libraries or attributes defined by users.
+
 ##### Via XML
+
 Here's a basic implementation.
+
 ```xml
  <ng.max.slideview.SlideView
         android:id="@+id/slideView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:buttonBackgroundColor="@color/button_bg_color"
-        app:buttonImage="@drawable/button_img"
-        app:slideBackgroundColor="@color/slide_bg_color"
-        app:slideText="@string/slide_text"
-        app:slideTextColor="@color/slide_text_color" />
+        app:sv_buttonBackgroundColor="@color/button_bg_color"
+        app:sv_buttonImage="@drawable/button_img"
+        app:sv_slideBackgroundColor="@color/slide_bg_color"
+        app:sv_slideText="@string/slide_text"
+        app:sv_slideTextColor="@color/slide_text_color" />
 ```
-
 
 Here's an example with all the view attributes.
 
@@ -64,16 +67,16 @@ Here's an example with all the view attributes.
         android:id="@+id/slideView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:buttonBackgroundColor="@color/button_bg_color"
-        app:buttonImage="@drawable/button_img"
-        app:slideBackgroundColor="@color/slide_bg_color"
-        app:slideText="@string/slide_text"
-        app:slideTextColor="@color/slide_text_color"
-        app:slideTextSize="16sp"
-        app:animateSlideText="true"
-        app:reverseSlide="false"
-        app:strokeColor="@color/slide_stroke_color"
-        app:buttonImageDisabled="@drawable/button_img_disabled" />
+        app:sv_buttonBackgroundColor="@color/button_bg_color"
+        app:sv_buttonImage="@drawable/button_img"
+        app:sv_slideBackgroundColor="@color/slide_bg_color"
+        app:sv_slideText="@string/slide_text"
+        app:sv_slideTextColor="@color/slide_text_color"
+        app:sv_slideTextSize="16sp"
+        app:sv_animateSlideText="true"
+        app:sv_reverseSlide="false"
+        app:sv_strokeColor="@color/slide_stroke_color"
+        app:sv_buttonImageDisabled="@drawable/button_img_disabled" />
 
 ```
 
@@ -99,7 +102,7 @@ Note: All color attributes can be replaced with a `ColorStateList` so the SlideV
 You can set a listener to be notified when the user slides across the SlideView. An example is shown below.
 
 ```java
-SlideView slideView = (SlideView) findViewById(R.id.slider);
+SlideView slideView = (SlideView) findViewById(R.id.slideView);
 slideView.setOnSlideCompleteListener(new SlideView.OnSlideCompleteListener() {
             @Override
             public void onSlideComplete(SlideView slideView) {
