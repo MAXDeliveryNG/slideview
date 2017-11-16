@@ -17,4 +17,11 @@ Version 1.0.1 *(2017-07-02)*
 Version 1.0.2 *(2017-09-19)*
 ----------------------------
 
-- Fix issue where SlideView's parent view intercepts touch events. 
+- Fix issue where SlideView's parent view intercepts touch events.
+
+Version 1.1.0 *(2017-11-24)*
+----------------------------
+
+- Add "sv_" prefix to all library attributes to avoid conflicting with attributes in other libraries or attributes defined by users.
+- The internal Slider now extends "AppCompatSeekBar" instead of "SeekBar"
+- Update internal dependencies.
