@@ -10,8 +10,8 @@ android {
         targetSdkVersion rootProject.targetSdkVersion
         versionCode rootProject.versionCode
         versionName rootProject.versionName
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
+
     buildTypes {
         release {
             minifyEnabled false
@@ -21,10 +21,6 @@ android {
 }
 
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
-    compile "com.android.support:appcompat-v7:$supportLibraryVersion"
-
-    // we have to reference the library module directly
-    // compile 'com.github.MAXDeliveryNG:slideview:1.0.3'
-    compile project(':slideview')
+    implementation "com.android.support:appcompat-v7:$supportLibraryVersion"
+    implementation project(':slideview')
 }
