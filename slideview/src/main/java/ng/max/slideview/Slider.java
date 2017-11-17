@@ -3,11 +3,11 @@ package ng.max.slideview;
 import android.content.Context;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
+import android.support.v7.widget.AppCompatSeekBar;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
-import android.widget.SeekBar;
 
-public class Slider extends SeekBar {
+public class Slider extends AppCompatSeekBar {
 
     private Drawable thumb;
     private SlideView.OnSlideCompleteListener listener;
@@ -53,7 +53,7 @@ public class Slider extends SeekBar {
 
     @Override
     public Drawable getThumb() {
-        // getThumb method was added in SDK16 but our minSDK is 14
+        // getThumb method was added in SDK 16 but our minSDK is 14
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
             return super.getThumb();
         } else {
