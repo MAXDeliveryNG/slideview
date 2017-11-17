@@ -11,9 +11,9 @@ import android.util.TypedValue;
  * @author Kizito Nwose
  */
 
-public class Util {
+class Util {
 
-    public static void setDrawableColor(Drawable drawable, int color) {
+    static void setDrawableColor(Drawable drawable, int color) {
         drawable.mutate();
         if (drawable instanceof ShapeDrawable) {
             ShapeDrawable shapeDrawable = (ShapeDrawable) drawable;
@@ -28,7 +28,7 @@ public class Util {
 
     }
 
-    public static void setDrawableStroke(Drawable drawable, int color) {
+    static void setDrawableStroke(Drawable drawable, int color) {
         if (drawable instanceof GradientDrawable) {
             GradientDrawable gradientDrawable = (GradientDrawable) drawable;
             gradientDrawable.mutate();
@@ -36,7 +36,7 @@ public class Util {
         }
     }
 
-    public static float spToPx(int sp, Context context) {
+    static float spToPx(int sp, Context context) {
         return TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_SP, sp,
                 context.getResources().getDisplayMetrics());
     }
