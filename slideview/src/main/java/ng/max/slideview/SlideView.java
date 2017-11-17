@@ -58,12 +58,12 @@ public class SlideView extends RelativeLayout implements SeekBar.OnSeekBarChange
     void init(AttributeSet attrs, int defStyle) {
         inflate(getContext(), R.layout.sv_slide_view, this);
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
-            setBackground(ContextCompat.getDrawable(getContext(), R.drawable.slide_view_bg));
+            setBackground(ContextCompat.getDrawable(getContext(), R.drawable.sv_view_bg));
         } else {
-            setBackgroundDrawable(ContextCompat.getDrawable(getContext(), R.drawable.slide_view_bg));
+            setBackgroundDrawable(ContextCompat.getDrawable(getContext(), R.drawable.sv_view_bg));
         }
-        slideTextView = (TextView) findViewById(R.id.slideText);
-        slider = (Slider) findViewById(R.id.slider);
+        slideTextView = findViewById(R.id.sv_text);
+        slider = findViewById(R.id.sv_slider);
         slider.setOnSeekBarChangeListener(this);
         slideBackground = getBackground();
         buttonLayers = (LayerDrawable) slider.getThumb();
@@ -78,30 +78,30 @@ public class SlideView extends RelativeLayout implements SeekBar.OnSeekBarChange
         boolean reverseSlide;
         ColorStateList sliderTextColor;
         try {
-            animateSlideText = a.getBoolean(R.styleable.SlideView_animateSlideText, true);
-            reverseSlide = a.getBoolean(R.styleable.SlideView_reverseSlide, false);
-            strokeColor = a.getColor(R.styleable.SlideView_strokeColor, ContextCompat.
+            animateSlideText = a.getBoolean(R.styleable.SlideView_sv_animateSlideText, true);
+            reverseSlide = a.getBoolean(R.styleable.SlideView_sv_reverseSlide, false);
+            strokeColor = a.getColor(R.styleable.SlideView_sv_strokeColor, ContextCompat.
                     getColor(getContext(), R.color.stroke_color_default));
 
 
-            slideText = a.getString(R.styleable.SlideView_slideText);
-            sliderTextColor = a.getColorStateList(R.styleable.SlideView_slideTextColor);
+            slideText = a.getString(R.styleable.SlideView_sv_slideText);
+            sliderTextColor = a.getColorStateList(R.styleable.SlideView_sv_slideTextColor);
 
-            slideTextSize = a.getDimension(R.styleable.SlideView_slideTextSize, slideTextSize);
+            slideTextSize = a.getDimension(R.styleable.SlideView_sv_slideTextSize, slideTextSize);
             slideTextView.setTextSize(TypedValue.COMPLEX_UNIT_PX, slideTextSize);
 
             setText(slideText);
             setTextColor(sliderTextColor == null ? slideTextView.getTextColors() : sliderTextColor);
 
-            int buttonImageId = a.getResourceId(R.styleable.SlideView_buttonImage, R.drawable.ic_chevron_double_right);
+            int buttonImageId = a.getResourceId(R.styleable.SlideView_sv_buttonImage, R.drawable.sv_ic_chevron_double_right);
             setButtonImage(ContextCompat.getDrawable(getContext(), buttonImageId));
             setButtonImageDisabled(ContextCompat.getDrawable(getContext(), a.getResourceId
-                    (R.styleable.SlideView_buttonImageDisabled, buttonImageId)));
+                    (R.styleable.SlideView_sv_buttonImageDisabled, buttonImageId)));
 
-            setButtonBackgroundColor(a.getColorStateList(R.styleable.SlideView_buttonBackgroundColor));
-            setSlideBackgroundColor(a.getColorStateList(R.styleable.SlideView_slideBackgroundColor));
+            setButtonBackgroundColor(a.getColorStateList(R.styleable.SlideView_sv_buttonBackgroundColor));
+            setSlideBackgroundColor(a.getColorStateList(R.styleable.SlideView_sv_slideBackgroundColor));
 
-            if (a.hasValue(R.styleable.SlideView_strokeColor)) {
+            if (a.hasValue(R.styleable.SlideView_sv_strokeColor)) {
                 Util.setDrawableStroke(slideBackground, strokeColor);
             }
             if (reverseSlide) {
@@ -165,11 +165,6 @@ public class SlideView extends RelativeLayout implements SeekBar.OnSeekBarChange
         slider.setOnSlideCompleteListenerInternal(listener, this);
     }
 
-
-    public interface OnSlideCompleteListener {
-        void onSlideComplete(SlideView slideView);
-    }
-
     @Override
     public void setEnabled(boolean enabled) {
         super.setEnabled(enabled);
@@ -201,5 +196,9 @@ public class SlideView extends RelativeLayout implements SeekBar.OnSeekBarChange
     @Override
     public void onStopTrackingTouch(SeekBar seekBar) {
 
+    }
+
+    public interface OnSlideCompleteListener {
+        void onSlideComplete(SlideView slideView);
     }
 }

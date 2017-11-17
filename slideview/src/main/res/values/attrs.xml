@@ -1,27 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <attr name="slideBackgroundColor" format="color"/>
-    <attr name="buttonBackgroundColor" format="color"/>
-    <attr name="buttonImage" format="reference"/>
-    <attr name="buttonImageDisabled" format="reference"/>
-    <attr name="strokeColor" format="color"/>
-    <attr name="slideText" format="string"/>
-    <attr name="slideTextColor" format="color"/>
-    <attr name="reverseSlide" format="boolean"/>
-    <attr name="animateSlideText" format="boolean"/>
-    <attr name="slideTextSize" format="dimension"/>
 
     <declare-styleable name="SlideView">
-        <attr name="slideBackgroundColor"/>
-        <attr name="buttonBackgroundColor"/>
-        <attr name="buttonImage"/>
-        <attr name="buttonImageDisabled"/>
-        <attr name="strokeColor"/>
-        <attr name="slideText"/>
-        <attr name="slideTextColor"/>
-        <attr name="reverseSlide"/>
-        <attr name="animateSlideText"/>
-        <attr name="slideTextSize" />
+        <attr name="sv_slideBackgroundColor" format="color" />
+        <attr name="sv_buttonBackgroundColor" format="color" />
+        <attr name="sv_buttonImage" format="reference" />
+        <attr name="sv_buttonImageDisabled" format="reference" />
+        <attr name="sv_strokeColor" format="color" />
+        <attr name="sv_slideText" format="string" />
+        <attr name="sv_slideTextColor" format="color" />
+        <attr name="sv_reverseSlide" format="boolean" />
+        <attr name="sv_animateSlideText" format="boolean" />
+        <attr name="sv_slideTextSize" format="dimension" />
     </declare-styleable>
 
 </resources>

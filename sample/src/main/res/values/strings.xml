@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">SlideView Sample</string>
+    <string name="slide_to_disable">Slide to disable</string>
 </resources>

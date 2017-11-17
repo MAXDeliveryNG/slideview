@@ -22,5 +22,5 @@
         android:top="5dp"
         android:gravity="center"
         android:id="@+id/buttonImage"
-        android:drawable="@drawable/ic_chevron_double_right"/>
+        android:drawable="@drawable/sv_ic_chevron_double_right" />
 </layer-list>
