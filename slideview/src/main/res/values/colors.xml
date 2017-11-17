@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="slider_color_default">#3F51B5</color>
-    <color name="button_color_default">#FFFFFF</color>
-    <color name="stroke_color_default">#FFFFFF</color>
+    <color name="sv_slider_color_default">#3F51B5</color>
+    <color name="sv_button_color_default">#FFFFFF</color>
+    <color name="sv_stroke_color_default">#FFFFFF</color>
 </resources>

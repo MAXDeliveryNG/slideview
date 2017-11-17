@@ -81,7 +81,7 @@ public class SlideView extends RelativeLayout implements SeekBar.OnSeekBarChange
             animateSlideText = a.getBoolean(R.styleable.SlideView_sv_animateSlideText, true);
             reverseSlide = a.getBoolean(R.styleable.SlideView_sv_reverseSlide, false);
             strokeColor = a.getColor(R.styleable.SlideView_sv_strokeColor, ContextCompat.
-                    getColor(getContext(), R.color.stroke_color_default));
+                    getColor(getContext(), R.color.sv_stroke_color_default));
 
 
             slideText = a.getString(R.styleable.SlideView_sv_slideText);
@@ -175,10 +175,10 @@ public class SlideView extends RelativeLayout implements SeekBar.OnSeekBarChange
                 buttonImageDisabled == null ? buttonImage : buttonImageDisabled);
         Util.setDrawableColor(buttonBackground, buttonBackgroundColor.getColorForState(
                 enabled ? new int[]{android.R.attr.state_enabled} : new int[]{-android.R.attr.state_enabled}
-                , ContextCompat.getColor(getContext(), R.color.button_color_default)));
+                , ContextCompat.getColor(getContext(), R.color.sv_button_color_default)));
         Util.setDrawableColor(slideBackground, slideBackgroundColor.getColorForState(
                 enabled ? new int[]{android.R.attr.state_enabled} : new int[]{-android.R.attr.state_enabled}
-                , ContextCompat.getColor(getContext(), R.color.button_color_default)));
+                , ContextCompat.getColor(getContext(), R.color.sv_button_color_default)));
     }
 
     @Override
