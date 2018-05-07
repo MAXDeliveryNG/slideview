@@ -33,7 +33,7 @@ public class SlideView extends RelativeLayout implements SeekBar.OnSeekBarChange
     protected ColorStateList slideBackgroundColor;
     protected ColorStateList buttonBackgroundColor;
     protected boolean animateSlideText;
-    protected boolean mReverseSlide;
+    protected boolean reversed;
 
     public SlideView(Context context) {
         super(context);
@@ -105,7 +105,7 @@ public class SlideView extends RelativeLayout implements SeekBar.OnSeekBarChange
             if (a.hasValue(R.styleable.SlideView_sv_strokeColor)) {
                 Util.setDrawableStroke(slideBackground, strokeColor);
             }
-            if (reverseSlide) _setReverseSlide(reverseSlide);
+            if (reverseSlide) _setReversed(reverseSlide);
         } finally {
             a.recycle();
         }
@@ -137,7 +137,7 @@ public class SlideView extends RelativeLayout implements SeekBar.OnSeekBarChange
     }
 
     public void setButtonBackgroundColor(@ColorInt int color) {
-        Util.setDrawableColor(buttonBackground, color);
+        this.setButtonBackgroundColor(ColorStateList.valueOf(color) );
     }
 
     public void setButtonBackgroundColor(ColorStateList color) {
@@ -155,13 +155,13 @@ public class SlideView extends RelativeLayout implements SeekBar.OnSeekBarChange
         Util.setDrawableStroke(slideBackground, color);
     }
 
-    public void setReverseSlide(boolean reverseSlide) {
-        _setReverseSlide(reverseSlide);
+    public void setReversed(boolean reversed) {
+        _setReversed(reversed);
     }
 
-    private void _setReverseSlide(boolean reverseSlide) {
-        mReverseSlide = reverseSlide;
-        if (reverseSlide) {
+    private void _setReversed(boolean reversed) {
+        this.reversed = reversed;
+        if (reversed) {
             slider.setRotation(180);
             LayoutParams params = ((LayoutParams) slideTextView.getLayoutParams());
             params.addRule(RelativeLayout.ALIGN_PARENT_RIGHT, 0);
@@ -184,8 +184,8 @@ public class SlideView extends RelativeLayout implements SeekBar.OnSeekBarChange
         }
     }
 
-    public boolean getReverseSlide() {
-        return mReverseSlide;
+    public boolean isReverse() {
+        return reversed;
     }
 
     public Slider getSlider() {
