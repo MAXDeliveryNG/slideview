@@ -26,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
         ((SlideView) findViewById(R.id.slider6)).setOnSlideCompleteListener(new SlideView.OnSlideCompleteListener() {
             @Override
             public void onSlideComplete(SlideView slideView) {
-               if (slideView.isReverse()) {
+               if (slideView.isReversed()) {
                    slideView.setReversed(false);
                    slideView.setText("Accept");
                    slideView.setButtonBackgroundColor(ContextCompat.getColor(slideView.getContext(),R.color.colorAccent));

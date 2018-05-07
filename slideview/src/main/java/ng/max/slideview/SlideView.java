@@ -105,7 +105,7 @@ public class SlideView extends RelativeLayout implements SeekBar.OnSeekBarChange
             if (a.hasValue(R.styleable.SlideView_sv_strokeColor)) {
                 Util.setDrawableStroke(slideBackground, strokeColor);
             }
-            if (reverseSlide) _setReversed(reverseSlide);
+            if (reverseSlide) setReversed(reverseSlide);
         } finally {
             a.recycle();
         }
@@ -156,10 +156,6 @@ public class SlideView extends RelativeLayout implements SeekBar.OnSeekBarChange
     }
 
     public void setReversed(boolean reversed) {
-        _setReversed(reversed);
-    }
-
-    private void _setReversed(boolean reversed) {
         this.reversed = reversed;
         if (reversed) {
             slider.setRotation(180);
@@ -184,7 +180,7 @@ public class SlideView extends RelativeLayout implements SeekBar.OnSeekBarChange
         }
     }
 
-    public boolean isReverse() {
+    public boolean isReversed() {
         return reversed;
     }
 
