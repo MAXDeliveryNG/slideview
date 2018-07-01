@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">SlideView Sample</string>
     <string name="slide_to_disable">Slide to disable</string>
+    <string name="slide_to_reverse">Slide to reverse</string>
 </resources>

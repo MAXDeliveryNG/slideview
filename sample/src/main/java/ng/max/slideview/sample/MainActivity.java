@@ -28,13 +28,13 @@ public class MainActivity extends AppCompatActivity {
             public void onSlideComplete(SlideView slideView) {
                if (slideView.isReversed()) {
                    slideView.setReversed(false);
-                   slideView.setText("Accept");
+                   slideView.setText("Normal");
                    slideView.setButtonBackgroundColor(ContextCompat.getColor(slideView.getContext(),R.color.colorAccent));
                    slideView.setTextColor(ContextCompat.getColor(slideView.getContext(),R.color.colorAccent));
                    slideView.setStokeColor(ContextCompat.getColor(slideView.getContext(),R.color.colorAccent));
                } else {
                    slideView.setReversed(true);
-                   slideView.setText("Reverse");
+                   slideView.setText("Reversed");
                    slideView.setButtonBackgroundColor(ContextCompat.getColor(slideView.getContext(),R.color.colorPrimary));
                    slideView.setTextColor(ContextCompat.getColor(slideView.getContext(),R.color.colorPrimary));
                    slideView.setStokeColor(ContextCompat.getColor(slideView.getContext(),R.color.colorPrimary));

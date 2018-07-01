@@ -5,7 +5,6 @@ group = 'com.github.MAXDeliveryNG'
 
 android {
     compileSdkVersion rootProject.compileSdkVersion
-    buildToolsVersion rootProject.buildToolsVersion
 
     defaultConfig {
         minSdkVersion rootProject.minSdkVersion
