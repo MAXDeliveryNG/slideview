@@ -83,13 +83,14 @@
     </ng.max.slideview.SlideView>
 
     <TextView
+        android:id="@+id/reverseText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/slide_to_reverse"
         android:layout_marginTop="20dp"
         android:textSize="20sp"
         android:layout_gravity="center_horizontal"
-        android:textColor="@color/colorPrimary"/>
+        android:textColor="@color/colorAccent"/>
 
     <ng.max.slideview.SlideView
         android:id="@+id/slider6"

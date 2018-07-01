@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.os.Vibrator;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
+import android.widget.TextView;
 
 import ng.max.slideview.SlideView;
 
@@ -29,15 +30,19 @@ public class MainActivity extends AppCompatActivity {
                if (slideView.isReversed()) {
                    slideView.setReversed(false);
                    slideView.setText("Normal");
-                   slideView.setButtonBackgroundColor(ContextCompat.getColor(slideView.getContext(),R.color.colorAccent));
-                   slideView.setTextColor(ContextCompat.getColor(slideView.getContext(),R.color.colorAccent));
-                   slideView.setStokeColor(ContextCompat.getColor(slideView.getContext(),R.color.colorAccent));
+                   final int color = ContextCompat.getColor(slideView.getContext(), R.color.colorAccent);
+                   ((TextView) findViewById(R.id.reverseText)).setTextColor(color);
+                   slideView.setButtonBackgroundColor(color);
+                   slideView.setTextColor(color);
+                   slideView.setStokeColor(color);
                } else {
                    slideView.setReversed(true);
                    slideView.setText("Reversed");
-                   slideView.setButtonBackgroundColor(ContextCompat.getColor(slideView.getContext(),R.color.colorPrimary));
-                   slideView.setTextColor(ContextCompat.getColor(slideView.getContext(),R.color.colorPrimary));
-                   slideView.setStokeColor(ContextCompat.getColor(slideView.getContext(),R.color.colorPrimary));
+                   final int color = ContextCompat.getColor(slideView.getContext(), R.color.colorPrimary);
+                   ((TextView) findViewById(R.id.reverseText)).setTextColor(color);
+                   slideView.setButtonBackgroundColor(color);
+                   slideView.setTextColor(color);
+                   slideView.setStokeColor(color);
                }
             }
         });
