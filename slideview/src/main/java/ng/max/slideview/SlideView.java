@@ -33,6 +33,7 @@ public class SlideView extends RelativeLayout implements SeekBar.OnSeekBarChange
     protected ColorStateList slideBackgroundColor;
     protected ColorStateList buttonBackgroundColor;
     protected boolean animateSlideText;
+    protected boolean reversed;
 
     public SlideView(Context context) {
         super(context);
@@ -104,17 +105,7 @@ public class SlideView extends RelativeLayout implements SeekBar.OnSeekBarChange
             if (a.hasValue(R.styleable.SlideView_sv_strokeColor)) {
                 Util.setDrawableStroke(slideBackground, strokeColor);
             }
-            if (reverseSlide) {
-                slider.setRotation(180);
-                LayoutParams params = ((LayoutParams) slideTextView.getLayoutParams());
-                params.addRule(RelativeLayout.ALIGN_PARENT_RIGHT, 0);
-                params.addRule(RelativeLayout.ALIGN_PARENT_LEFT);
-                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR1) {
-                    params.addRule(RelativeLayout.ALIGN_PARENT_END, 0);
-                    params.addRule(RelativeLayout.ALIGN_PARENT_START);
-                }
-                slideTextView.setLayoutParams(params);
-            }
+            if (reverseSlide) setReversed(reverseSlide);
         } finally {
             a.recycle();
         }
@@ -145,6 +136,9 @@ public class SlideView extends RelativeLayout implements SeekBar.OnSeekBarChange
         buttonImageDisabled = image;
     }
 
+    public void setButtonBackgroundColor(@ColorInt int color) {
+        this.setButtonBackgroundColor(ColorStateList.valueOf(color) );
+    }
 
     public void setButtonBackgroundColor(ColorStateList color) {
         buttonBackgroundColor = color;
@@ -155,6 +149,39 @@ public class SlideView extends RelativeLayout implements SeekBar.OnSeekBarChange
     public void setSlideBackgroundColor(ColorStateList color) {
         slideBackgroundColor = color;
         Util.setDrawableColor(slideBackground, color.getDefaultColor());
+    }
+
+    public void setStokeColor(@ColorInt int color) {
+        Util.setDrawableStroke(slideBackground, color);
+    }
+
+    public void setReversed(boolean reversed) {
+        this.reversed = reversed;
+        if (reversed) {
+            slider.setRotation(180);
+            LayoutParams params = ((LayoutParams) slideTextView.getLayoutParams());
+            params.addRule(RelativeLayout.ALIGN_PARENT_RIGHT, 0);
+            params.addRule(RelativeLayout.ALIGN_PARENT_LEFT);
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR1) {
+                params.addRule(RelativeLayout.ALIGN_PARENT_END, 0);
+                params.addRule(RelativeLayout.ALIGN_PARENT_START);
+            }
+            slideTextView.setLayoutParams(params);
+        } else {
+            slider.setRotation(0);
+            LayoutParams params = ((LayoutParams) slideTextView.getLayoutParams());
+            params.addRule(RelativeLayout.ALIGN_PARENT_LEFT, 0);
+            params.addRule(RelativeLayout.ALIGN_PARENT_RIGHT);
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR1) {
+                params.addRule(RelativeLayout.ALIGN_PARENT_START, 0);
+                params.addRule(RelativeLayout.ALIGN_PARENT_END);
+            }
+            slideTextView.setLayoutParams(params);
+        }
+    }
+
+    public boolean isReversed() {
+        return reversed;
     }
 
     public Slider getSlider() {

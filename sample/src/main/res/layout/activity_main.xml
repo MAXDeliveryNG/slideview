@@ -79,6 +79,21 @@
         app:sv_buttonImage="@drawable/ic_settings_purple"
         app:sv_slideBackgroundColor="@color/slide_button_bg_selector"
         app:sv_slideText="Enabled"
-        app:sv_buttonImageDisabled="@drawable/ic_settings_grey600_24dp" />
+        app:sv_buttonImageDisabled="@drawable/ic_settings_grey600_24dp" >
+
+    </ng.max.slideview.SlideView>
+
+    <ng.max.slideview.SlideView
+        android:id="@+id/slider6"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="15dp"
+        android:layout_marginTop="15dp"
+        app:sv_buttonBackgroundColor="@color/colorAccent"
+        app:sv_buttonImage="@drawable/ic_chevron_double_right_white_24dp"
+        app:sv_slideBackgroundColor="@android:color/white"
+        app:sv_slideText="Accept"
+        app:sv_slideTextColor="@color/colorAccent"
+        app:sv_strokeColor="@color/colorAccent" />
 
 </LinearLayout>
