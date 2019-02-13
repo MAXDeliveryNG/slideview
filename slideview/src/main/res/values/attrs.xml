@@ -13,5 +13,19 @@
         <attr name="sv_animateSlideText" format="boolean" />
         <attr name="sv_slideTextSize" format="dimension" />
     </declare-styleable>
+    <declare-styleable name="TwoWaySlideView">
+        <attr name="tsv_slideBackgroundColor" format="color" />
+        <attr name="tsv_buttonBackgroundColor" format="color" />
+        <attr name="tsv_buttonImage" format="reference" />
+        <attr name="tsv_buttonImageDisabled" format="reference" />
+        <attr name="tsv_strokeColor" format="color" />
+        <attr name="tsv_slideStartText" format="string" />
+        <attr name="tsv_slideEndText" format="string" />
+        <attr name="tsv_slideEndTextColor" format="color" />
+        <attr name="tsv_slideStartTextColor" format="color" />
+        <attr name="tsv_animateSlideText" format="boolean" />
+        <attr name="tsv_slideEndTextSize" format="dimension" />
+        <attr name="tsv_slideStartTextSize" format="dimension" />
+    </declare-styleable>
 
 </resources>
