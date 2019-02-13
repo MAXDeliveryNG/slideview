@@ -5,16 +5,19 @@ import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.support.v7.widget.AppCompatSeekBar;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.MotionEvent;
 
-public class Slider extends AppCompatSeekBar {
+public class TwoWaySlider extends AppCompatSeekBar {
 
     private Drawable thumb;
-    private SlideView.OnSlideCompleteListener listener;
-    private SlideView slideView;
+    private TwoWaySlideView.OnTwoWaySlideListener listener;
+    private TwoWaySlideView slideView;
 
-    public Slider(Context context, AttributeSet attrs) {
+    public TwoWaySlider(Context context, AttributeSet attrs) {
+
         super(context, attrs);
+        setProgress(50);
     }
 
     @Override
@@ -35,22 +38,26 @@ public class Slider extends AppCompatSeekBar {
                 return false;
             }
         } else if (event.getAction() == MotionEvent.ACTION_UP) {
-            if (getProgress() > 85) {
-                if (listener != null) listener.onSlideComplete(slideView);
+            if (getProgress() > 90) {
+
+                if (listener != null) listener.onSlideComplete(slideView, SlideDirection.END);
+            }
+            if (getProgress() < 10) {
+                if (listener != null) listener.onSlideComplete(slideView, SlideDirection.START);
+
             }
             getParent().requestDisallowInterceptTouchEvent(false);
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
-                setProgress(0, true);
+                setProgress(50, true);
             } else
-                setProgress(0);
-
+                setProgress(50);
         } else
             super.onTouchEvent(event);
 
         return true;
     }
 
-    void setOnSlideCompleteListenerInternal(SlideView.OnSlideCompleteListener listener, SlideView slideView) {
+    void setOnSlideCompleteListenerInternal(TwoWaySlideView.OnTwoWaySlideListener listener, TwoWaySlideView slideView) {
         this.listener = listener;
         this.slideView = slideView;
     }
@@ -63,5 +70,9 @@ public class Slider extends AppCompatSeekBar {
         } else {
             return thumb;
         }
+    }
+
+   public enum SlideDirection {
+        END, START
     }
 }
